@@ -1,6 +1,7 @@
 import pygame
 
-def playerMovement(player_rect, rect, player_pos, dt):
+# função de movimentação e colisão do personagem
+def playerMovement(player_rect: pygame.Rect, rect: pygame.Rect, player_pos: pygame.Vector2, dt: int):
     key = pygame.key.get_pressed()
     movement = pygame.Vector2(0,0)
 

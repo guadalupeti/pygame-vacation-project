@@ -1,5 +1,8 @@
 import pygame
 
+# funções de desenho dos personagens
+# fazer lógica dos sprites nesse arquivo
+
 def drawCharacter(screen: pygame.display, player_pos: pygame.Vector2):
     pygame.draw.circle(screen, "red", player_pos, 40)
     
