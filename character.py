@@ -1,4 +1,5 @@
 import pygame
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
@@ -8,13 +9,15 @@ class Player(pygame.sprite.Sprite):
         self.image = self.sprites[self.current_sprite]
         self.rect = self.image.get_rect()
         self.rect.center = [x,y]
+        
     def update(self):
         self.image = self.sprites[int(self.current_sprite)]
+    
         
 def drawCharacter(screen: pygame.display, player_pos: pygame.Vector2):
     pygame.draw.circle(screen, "red", player_pos, 40)
 
-def drawCharacterWSprites(screen: pygame.display, rect: pygame.Rect, player: Player):
+def drawCharacterWSprites(screen: pygame.display, player: Player):
     movingSprites = pygame.sprite.Group()
     movingSprites.add(player)
     movingSprites.draw(screen)

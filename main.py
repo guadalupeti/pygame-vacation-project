@@ -15,7 +15,7 @@ clock = pygame.time.Clock()
 
 player = Player(screen.get_width() / 2, screen.get_height() / 2)
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2) # criação da posição inical do personagem
-player_rect = pygame.Rect(player_pos.x, player_pos.y, 60,60) # retângulo de colisão do personagem
+player_rect = player.rect # retângulo de colisão do personagem
 
 rect = pygame.Rect(30,30,60,60) # retângulo para testar colisão
 
@@ -35,7 +35,7 @@ while running:
 
     screen.fill('black')
 
-    drawCharacter(screen, player_pos) 
+    drawCharacterWSprites(screen, player)
     drawObj(screen, rect)
     drawDebugSquare(screen, player_rect) # quadrado de debug (o quadrado que fica em cima do personagem)
 
