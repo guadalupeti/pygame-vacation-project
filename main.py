@@ -13,6 +13,7 @@ running = True
 screen = pygame.display.set_mode((1280,720))
 clock = pygame.time.Clock()
 
+player = Player(screen.get_width() / 2, screen.get_height() / 2)
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2) # criação da posição inical do personagem
 player_rect = pygame.Rect(player_pos.x, player_pos.y, 60,60) # retângulo de colisão do personagem
 
