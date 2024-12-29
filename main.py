@@ -25,9 +25,6 @@ while running:
             pygame.quit()
             running = False
             sys.exit()
-
-    
-
  
     dt = clock.tick(60)/1000 # delta time: variável para tratar movimentação em caso de possíveis travamentos
     

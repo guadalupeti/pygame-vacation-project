@@ -15,12 +15,10 @@ def playerMovement(player_rect: pygame.Rect, rect: pygame.Rect, player_pos: pyga
     if key[pygame.K_d]: 
         movement.x += 300*dt
         player.direction = 1
-        print(player.direction)
 
     if key[pygame.K_a]:
         movement.x -= 300*dt
         player.direction = 0
-        print(player.direction)
 
     new_pos = player_pos + movement
 
@@ -34,4 +32,4 @@ def playerMovement(player_rect: pygame.Rect, rect: pygame.Rect, player_pos: pyga
         player_pos.y = new_pos.y
     
     
-    player_rect.center = player_pos
+ 
