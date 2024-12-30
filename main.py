@@ -2,9 +2,12 @@ import pygame
 import sys
 from character import *
 from movement import *
+from keyLogic import *
+from objClasses import *
 
 # to-do
 # configurar sprites
+# fazer logica das chaves
 
 pygame.init()
 
@@ -14,6 +17,9 @@ screen = pygame.display.set_mode((1280,720))
 clock = pygame.time.Clock()
 
 player = Player(screen.get_width() / 2, screen.get_height() / 2)
+key = Key(600,600)
+door = Door(1280, 720)
+
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2) # criação da posição inical do personagem
 player_rect = player.rect # retângulo de colisão do personagem
 
@@ -29,19 +35,19 @@ while running:
     dt = clock.tick(60)/1000 # delta time: variável para tratar movimentação em caso de possíveis travamentos
     
     playerMovement(player_rect, rect, player_pos, dt, player)
+    getKey(player, key.rect)
+    useKey(player, door.rect)
 
     screen.fill('black')
 
     drawCharacterWSprites(screen, player)
     drawObj(screen, rect)
     drawDebugSquare(screen, player_rect) # quadrado de debug (o quadrado que fica em cima do personagem)
-
+    drawDoor(screen, door)
+    drawKey(screen, key)
+    
     pygame.display.flip()
 
     
-
-
 pygame.quit()
 sys.exit()
-
-

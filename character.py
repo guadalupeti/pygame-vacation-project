@@ -1,4 +1,5 @@
 import pygame
+from objClasses import *
 
 class Player(pygame.sprite.Sprite): # Classe de definição dos sprites
     def __init__(self, x, y):
@@ -17,6 +18,8 @@ class Player(pygame.sprite.Sprite): # Classe de definição dos sprites
         self.rect = self.image.get_rect()
         self.rect.center = [x,y]
         self.direction = 1 # 0 - esquerda / 1 - direita
+        self.wKey = False
+        self.level = 1
         
     def update(self):
         self.image = self.sprites[int(self.current_sprite)]
@@ -38,5 +41,17 @@ def drawObj(screen: pygame.display, rect: pygame.Rect):
 
 def drawDebugSquare(screen :pygame.display, player_rect: pygame.Rect):
     pygame.draw.rect(screen, 'green', player_rect, 2)   
+
+def drawKey(screen: pygame.display, key: Key):
+    movingSprites = pygame.sprite.Group()
+    movingSprites.add(key)
+    movingSprites.draw(screen)
+    movingSprites.update()
+
+def drawDoor(screen: pygame.display, door: Door):
+    movingSprites = pygame.sprite.Group()
+    movingSprites.add(door)
+    movingSprites.draw(screen)
+    movingSprites.update()
     
     
