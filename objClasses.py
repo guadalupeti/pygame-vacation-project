@@ -9,6 +9,7 @@ class Key(pygame.sprite.Sprite):
         self.image = self.sprites[self.current_sprite]
         self.rect = self.image.get_rect()
         self.rect.center = [x,y]
+        self.taken = False
 
 class Door(pygame.sprite.Sprite):
     def __init__(self, x, y):

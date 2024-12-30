@@ -43,10 +43,12 @@ def drawDebugSquare(screen :pygame.display, player_rect: pygame.Rect):
     pygame.draw.rect(screen, 'green', player_rect, 2)   
 
 def drawKey(screen: pygame.display, key: Key):
-    movingSprites = pygame.sprite.Group()
-    movingSprites.add(key)
-    movingSprites.draw(screen)
-    movingSprites.update()
+    if not key.taken:
+        movingSprites = pygame.sprite.Group()
+        movingSprites.add(key)
+        movingSprites.draw(screen)
+        movingSprites.update()
+
 
 def drawDoor(screen: pygame.display, door: Door):
     movingSprites = pygame.sprite.Group()

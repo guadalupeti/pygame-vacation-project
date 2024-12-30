@@ -35,8 +35,8 @@ while running:
     dt = clock.tick(60)/1000 # delta time: variável para tratar movimentação em caso de possíveis travamentos
     
     playerMovement(player_rect, rect, player_pos, dt, player)
-    getKey(player, key.rect)
-    useKey(player, door.rect)
+    getKey(player, key)
+    useKey(player, door)
 
     screen.fill('black')
 
