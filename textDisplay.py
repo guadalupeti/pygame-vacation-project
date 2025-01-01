@@ -8,3 +8,4 @@ def displayText(txt: str, screen: pygame.display.set_mode):
     txt_rect = rendered_text.get_rect(center = (100, 700))
 
     screen.blit(rendered_text, txt_rect)
+    pygame.display.update()

@@ -10,11 +10,11 @@ def getKey(player: Player, key: Key, screen: pygame.display.set_mode):
     if player_rect.colliderect(key_rect) and key_pressed[pygame.K_e]:
         player.wKey = True
         key.taken = True
-        displayText('Aperte E para pegar a chave', screen)
 
 def useKey(player: Player, door_rect: pygame.Rect, screen: pygame.display.set_mode):
     player_rect = player.rect
     key_pressed = pygame.key.get_pressed()
+    displayText('Aperte E para usar a chave', screen)
     if player_rect.colliderect(door_rect) and key_pressed[pygame.K_e] and player.wKey:
         player.level += 1
-        displayText('Aperte E para usar a chave', screen)
+        
