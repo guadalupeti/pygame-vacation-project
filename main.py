@@ -15,6 +15,7 @@ running = True
 
 screen = pygame.display.set_mode((1280,720))
 clock = pygame.time.Clock()
+pygame.display.set_caption('Exibindo texto')
 
 player = Player(screen.get_width() / 2, screen.get_height() / 2)
 key = Key(600,600)
@@ -35,8 +36,8 @@ while running:
     dt = clock.tick(60)/1000 # delta time: variável para tratar movimentação em caso de possíveis travamentos
     
     playerMovement(player_rect, rect, player_pos, dt, player)
-    getKey(player, key)
-    useKey(player, door)
+    getKey(player, key, screen)
+    useKey(player, door, screen)
 
     screen.fill('black')
 
