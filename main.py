@@ -10,6 +10,7 @@ from objClasses import *
 # fazer logica das chaves
 # terminar logica dos textos de ação
 # fazer lógica de passagem de nivel
+# terminar dicionariod de dados dos niveis
 
 pygame.init()
 
