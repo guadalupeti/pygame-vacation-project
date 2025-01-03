@@ -9,6 +9,7 @@ from objClasses import *
 # configurar sprites
 # fazer logica das chaves
 # terminar logica dos textos de ação
+# fazer lógica de passagem de nivel
 
 pygame.init()
 
